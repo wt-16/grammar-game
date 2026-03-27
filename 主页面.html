@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英语语法大厅 - 词与句</title>
+    <style>
+        :root {
+            --word-color: #00cec9; /* 词类：青色 */
+            --sentence-color: #a29bfe; /* 句类：浅紫色 */
+            --bg-gradient: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-image: var(--bg-gradient);
+            color: #fff;
+        }
+
+        /* 主容器 */
+        .main-hall {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            padding: 40px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            background: linear-gradient(to bottom, #fff, rgba(255,255,255,0.7));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            margin-bottom: 40px;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        /* 双列布局 */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* 分类区块 */
+        .category-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .category-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* 词类标题色 */
+        .word-section .category-header { color: var(--word-color); }
+        /* 句类标题色 */
+        .sentence-section .category-header { color: var(--sentence-color); }
+
+        /* 按钮列表 */
+        .button-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nav-btn {
+            display: block;
+            text-decoration: none;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            color: #eee;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            text-align: left;
+        }
+
+        /* 词类按钮悬停 */
+        .word-section .nav-btn:hover {
+            background: rgba(0, 206, 201, 0.2);
+            border-color: var(--word-color);
+            transform: translateX(8px);
+            color: #fff;
+        }
+
+        /* 句类按钮悬停 */
+        .sentence-section .nav-btn:hover {
+            background: rgba(162, 155, 254, 0.2);
+            border-color: var(--sentence-color);
+            transform: translateX(8px);
+            color: #fff;
+        }
+
+        .nav-btn span {
+            margin-right: 10px;
+            opacity: 0.7;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 600px) {
+            .main-hall { padding: 25px 15px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-hall">
+        <h1>英语语法导航大厅</h1>
+        <p class="subtitle">MASTER ENGLISH GRAMMAR</p>
+
+        <div class="grid-layout">
+            
+            <div class="category-card word-section">
+                <div class="category-header">
+                    <span>🏷️</span> 词类法 (Morphology)
+                </div>
+                <div class="button-list">
+                    <a href="words/noun.html" class="nav-btn"><span>01</span> 名词 (Noun)</a>
+                    <a href="words/pronoun.html" class="nav-btn"><span>02</span> 代词 (Pronoun)</a>
+                    <a href="words/verb.html" class="nav-btn"><span>03</span> 动词 (Verb)</a>
+                    <a href="words/adj-adv.html" class="nav-btn"><span>04</span> 形容词 & 副词</a>
+                    <a href="words/numeral.html" class="nav-btn"><span>05</span> 数词 (Numeral)</a>
+                </div>
+            </div>
+
+            <div class="category-card sentence-section">
+                <div class="category-header">
+                    <span>🏗️</span> 句法学 (Syntax)
+                </div>
+                <div class="button-list">
+                    <a href="sentences/elements.html" class="nav-btn"><span>01</span> 句子成分</a>
+                    <a href="sentences/structure.html" class="nav-btn"><span>02</span> 句子结构</a>
+                    <a href="sentences/types.html" class="nav-btn"><span>03</span> 句子类型</a>
+                    <a href="sentences/mood.html" class="nav-btn"><span>04</span> 语气 (Mood)</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5;">
+            Grammar Game v2.0 • Created by WT-16
+        </div>
+    </div>
+
+</body>
+</html>
