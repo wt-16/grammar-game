@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语法游戏 - 导航</title>
+    <style>
+        /* 1. 基础设置与背景 */
+        :root {
+            --primary-color: #6c5ce7; /* 紫色 */
+            --secondary-color: #00cec9; /* 青色 */
+            --bg-color-1: #4158D0;
+            --bg-color-2: #C850C0;
+            --bg-color-3: #FFCC70;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif, 'Microsoft YaHei';
+            /* 绚丽的渐变背景 */
+            background-image: linear-gradient(43deg, var(--bg-color-1) 0%, var(--bg-color-2) 46%, var(--bg-color-3) 100%);
+            color: #2d3436;
+        }
+
+        /* 2. 毛玻璃容器 */
+        .glass-container {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            padding: 40px;
+            border-radius: 20px;
+            /* 毛玻璃效果的核心：背景模糊 */
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* 3. 装饰背景球 (增加艺术感) */
+        .glass-container::before,
+        .glass-container::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .glass-container::before {
+            top: -50px;
+            left: -50px;
+            background: var(--secondary-color);
+            opacity: 0.5;
+        }
+
+        .glass-container::after {
+            bottom: -50px;
+            right: -50px;
+            background: var(--primary-color);
+            opacity: 0.5;
+        }
+
+        /* 4. 标题样式 */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.6));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 5. 链接按钮容器 */
+        .link-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 6. 现代按钮样式 */
+        .game-link {
+            display: block;
+            text-decoration: none;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 7. 悬停效果 (发光与缩放) */
+        .game-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .game-link:active {
+            transform: translateY(1px);
+        }
+
+        /* 8. 不同的颜色点缀 */
+        .todo-link {
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .doing-link {
+            border-left: 5px solid var(--primary-color);
+        }
+
+        /* 9. 页脚信息 */
+        .footer-info {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="glass-container">
+        <h1>语法游戏</h1>
+        
+        <div class="link-group">
+            <a href="todo/index.html" class="game-link todo-link">进入 TODO 集合</a>
+            <a href="doing/index.html" class="game-link doing-link">进入 DOING 集合</a>
+        </div>
+
+        <div class="footer-info">
+            选择你的版本开始练习
+        </div>
+    </div>
+
+</body>
+</html>
