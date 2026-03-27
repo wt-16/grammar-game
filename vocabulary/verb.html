@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动词专题 - 谓语与非谓语</title>
+    <style>
+        :root {
+            --finite-color: #ff7675; /* 谓语：珊瑚红 */
+            --non-finite-color: #55efc4; /* 非谓语：薄荷绿 */
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
 
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-image: var(--bg-gradient);
+            color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            padding: 40px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            background: linear-gradient(to right, #fff, #ddd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .section-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* 颜色区分 */
+        .finite .section-title { color: var(--finite-color); }
+        .non-finite .section-title { color: var(--non-finite-color); }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #eee;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        /* 谓语按钮悬停 */
+        .finite .nav-link:hover {
+            background: rgba(255, 118, 117, 0.2);
+            transform: translateX(8px);
+            color: #fff;
+        }
+
+        /* 非谓语按钮悬停 */
+        .non-finite .nav-link:hover {
+            background: rgba(85, 239, 196, 0.2);
+            transform: translateX(8px);
+            color: #fff;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            opacity: 0.8;
+        }
+
+        .back-btn {
+            margin-top: 40px;
+            display: inline-block;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            padding: 8px 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>动词专题 (Verbs)</h1>
+
+    <div class="grid-layout">
+        
+        <div class="section-card finite">
+            <div class="section-title">谓语动词 (Finite)</div>
+            <div class="btn-group">
+                <a href="tenses.html" class="nav-link">
+                    <span>时态</span>
+                    <span class="tag">Tenses</span>
+                </a>
+                <a href="voice.html" class="nav-link">
+                    <span>语态</span>
+                    <span class="tag">Voice</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="section-card non-finite">
+            <div class="section-title">非谓语 (Non-finite)</div>
+            <div class="btn-group">
+                <a href="non-finite-verb/infinitive.html" class="nav-link">
+                    <span>不定式</span>
+                    <span class="tag">to do</span>
+                </a>
+                <a href="non-finite-verb/gerund.html" class="nav-link">
+                    <span>动名词 / 现在分词</span>
+                    <span class="tag">doing</span>
+                </a>
+                <a href="non-finite-verb/participle.html" class="nav-link">
+                    <span>过去分词</span>
+                    <span class="tag">done</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="../../index.html" class="back-btn">⬅ 返回导航大厅</a>
+</div>
+
+</body>
+</html>
