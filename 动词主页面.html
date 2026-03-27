@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动词专题 - 谓语与非谓语</title>
+    <style>
+        :root {
+            --finite-color: #ff7675; /* 谓语：珊瑚红色 */
+            --non-finite-color: #55efc4; /* 非谓语：薄荷绿色 */
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-image: var(--bg-gradient);
+            color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+            padding: 40px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .header-box {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            background: linear-gradient(to right, #fff, #ddd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .section-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        /* 谓语动词标题色 */
+        .finite .section-title { color: var(--finite-color); }
+        /* 非谓语动词标题色 */
+        .non-finite .section-title { color: var(--non-finite-color); }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        /* 谓语按钮悬停 */
+        .finite .nav-link:hover {
+            background: rgba(255, 118, 117, 0.2);
+            border-left-color: var(--finite-color);
+            transform: translateX(10px);
+        }
+
+        /* 非谓语按钮悬停 */
+        .non-finite .nav-link:hover {
+            background: rgba(85, 239, 196, 0.2);
+            border-left-color: var(--non-finite-color);
+            transform: translateX(10px);
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        .back-btn {
+            margin-top: 40px;
+            display: inline-block;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 10px 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-box">
+        <h1>动词专题 (Verbs)</h1>
+        <p style="opacity: 0.7;">限定动词与非限定动词的深度解析</p>
+    </div>
+
+    <div class="grid-layout">
+        
+        <div class="section-card finite">
+            <div class="section-title">谓语动词 (Finite)</div>
+            <div class="btn-group">
+                <a href="#" class="nav-link">
+                    <span>时态 (Tenses)</span>
+                    <span class="tag">Active</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span>被动语态 (Passive Voice)</span>
+                    <span class="tag">Voice</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span>主谓一致 (Agreement)</span>
+                    <span class="tag">Rules</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span>情态动词 (Modal Verbs)</span>
+                    <span class="tag">Modals</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="section-card non-finite">
+            <div class="section-title">非谓语动词 (Non-finite)</div>
+            <div class="btn-group">
+                <a href="#" class="nav-link">
+                    <span>不定式 (Infinitive)</span>
+                    <span class="tag">to do</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span>动名词 (Gerund)</span>
+                    <span class="tag">doing</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span>现在分词 (Present Participle)</span>
+                    <span class="tag">doing</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span>过去分词 (Past Participle)</span>
+                    <span class="tag">done</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="back-btn">⬅ 返回主导航大厅</a>
+</div>
+
+</body>
+</html>
